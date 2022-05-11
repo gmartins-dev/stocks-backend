@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const statusCodes = require('../../utils/statusCodes');
-const getKeyForObject = require('../../utils/getTimeSeries');
+const getKeyForObject = require('../../utils/getKeyForObject');
 const { getHistoryPrices } = require('../../services/stocks/history-services');
 
 module.exports = {
