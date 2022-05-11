@@ -1,18 +1,13 @@
 # Backend da aplicação
 
-API_KEY = BKKG4LZ0IQ859P9X
-API_BASE = https://www.alphavantage.co
+API_KEY = 
+API_BASE = 
 
 ## verificar o desempenho de uma AÇÃO(STOCK) em cinco cenários:
 
-- Preço atual; → DAILY [TIME_SERIES_INTRADAY](https://www.alphavantage.co/documentation/#daily)
-ROTA> https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=BKKG4LZ0IQ859P9X
+- Preço atual;
 
-nome -> ticker / symbol
-data -> 
-preço -> close
-
-- Preço histórico; → [TIME_SERIES_MONTHLY](https://www.alphavantage.co/documentation/#monthly)
+- Preço histórico; 
 
 - Preço atual em comparação a outras ações; → matchScore
 
