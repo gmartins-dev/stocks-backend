@@ -1,3 +1,6 @@
+const axios = require('axios');
+const getKeyForObject = require('../../utils/getKeyForObject');
+
 const getLatestPrice = (responseRequest, stock_name, keyListValues) => {
   const date = Object.keys(responseRequest[keyListValues]).filter((key, index) => {
     if (index == 0) return key;
@@ -14,4 +17,21 @@ const getLatestPrice = (responseRequest, stock_name, keyListValues) => {
   };
 };
 
-module.exports = getLatestPrice;
+const handleQuote = async (params) => {
+  let uri = `/query?`;
+  uri += `function=TIME_SERIES_INTRADAY&`;
+  uri += `symbol=${params.stock_name}&interval=5min&`;
+  uri += `apikey=${process.env.API_KEY}`;
+
+  console.log(uri);
+  const quote = await axios.get(process.env.API_BASE + uri, {
+    json: true,
+    headers: { 'User-Agent': 'request' },
+  });
+
+  const keyTimeSeries = getKeyForObject(quote.data);
+  const responseFn = getLatestPrice(quote.data, params.stock_name, keyTimeSeries);
+  return responseFn;
+};
+
+module.exports = { getLatestPrice, handleQuote };
