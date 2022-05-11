@@ -23,15 +23,14 @@ const handleQuote = async (params) => {
   uri += `symbol=${params.stock_name}&interval=5min&`;
   uri += `apikey=${process.env.API_KEY}`;
 
-  console.log(uri);
   const quote = await axios.get(process.env.API_BASE + uri, {
     json: true,
     headers: { 'User-Agent': 'request' },
   });
 
   const keyTimeSeries = getKeyForObject(quote.data);
-  const responseFn = getLatestPrice(quote.data, params.stock_name, keyTimeSeries);
-  return responseFn;
+  const latestPrice = getLatestPrice(quote.data, params.stock_name, keyTimeSeries);
+  return latestPrice;
 };
 
 module.exports = { getLatestPrice, handleQuote };

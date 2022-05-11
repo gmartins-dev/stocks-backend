@@ -8,9 +8,11 @@ const stocksHistoryController = require('./controller/stocks/history-controller'
 
 routes.get('/stocks/:stock_name/quote', stocksQuoteController.quote);
 
-routes.get(
-  '/stocks/:stock_name/history?from=<string>&to=<string>', stocksHistoryController.history,
-);
+routes.get('/stocks/:stock_name/history', stocksHistoryController.history);
+
+// routes.get(
+//   '/stocks/:stock_name/history?from=<string>&to=<string>', stocksHistoryController.history,
+// );
 
 // Criar -> ('/stocks/:stock_name/compare')
 
