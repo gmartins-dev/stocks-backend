@@ -103,9 +103,9 @@ https://www.figma.com/file/8A4nlHKQNKC4vgrPKjDoxA/IPNET---Aplica%C3%A7%C3%A3o-pa
 
   
 
-1. `git clone https://github.com/xxx`
+1. `git clone https://github.com/guilhermemm-dev/stocks-backend
 
-2. `cd /ipnet-backend`
+2. `cd /stocks-backend
 
 3. `npm i`
 
@@ -143,7 +143,7 @@ Após baixar o Postman, basta seguir os passos abaixo para poder testar as rotas
   
 Buscando seguir o padrão e design da API, seguem abaixo as URI's das rotas a serem desenvolvidas, todas as rotas criadas e exemplos podem ser visualizados no link abaixo:
 
-https://documenter.getpostman.com/XXXXXX
+https://documenter.getpostman.com/xxxxx
 
   
 
